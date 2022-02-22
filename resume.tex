@@ -1,0 +1,199 @@
+\documentclass[11pt,oneside,a4paper,titlepage]{article}
+
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\usepackage{tgbonum}
+\usepackage{graphicx}
+\usepackage{tikz}
+
+\geometry{
+    a4paper,
+    left    =-0.1cm,
+    right   =-0.1cm,
+    top     =-0.1cm,
+    bottom  =-0.1cm
+}
+
+\newsavebox{\picbox}
+
+\newcommand{\cutpic}[3]{
+  \savebox{\picbox}{\includegraphics[width=#2]{#3}}
+  \tikz\node [draw, rounded corners=#1, line width=1pt,
+                color=white, minimum width=\wd\picbox,
+                minimum height=\ht\picbox, path picture={
+                \node at (path picture bounding box.center) {
+                    \usebox{\picbox}};
+                }
+            ]{};
+}
+
+\definecolor{titleBack}{RGB}{255,121,35}
+\definecolor{sup-lgray}{RGB}{238,238,238}
+
+\title{Victor Olin}
+\date{}
+
+\begin{document}
+
+\tcbset{colframe=white,colback=titleBack,arc=0mm}
+
+\begin{tcolorbox}
+    \begin{minipage}{4.5cm}
+        \cutpic{2cm}{4cm}{pfp.jpg}
+    \end{minipage}
+    \begin{minipage}{15cm}
+        \begin{center}
+            {\fontfamily{qag}\selectfont
+                \Huge{\textcolor{white}{Victor Olin}} \\
+                \vspace*{0.5cm}
+                \Large{\textcolor{white}{Datateknik student \textbar{ } Programmerings entusiast}}
+            }
+        \end{center}
+    \end{minipage}
+\end{tcolorbox}
+
+% \titleformat{\section*}[display] {\fontfamily{qag}\selectfont}
+
+\tcbset{colframe=white,colback=white,arc=0mm,fit to height=24cm}
+\begin{tcolorbox}
+    \begin{minipage}[t]{8cm}
+        \vspace*{-18.2pt}
+        \begin{tcolorbox}[grow to left by=15pt,colframe=sup-lgray,colback=sup-lgray,sharp corners]
+            {\fontfamily{qag}\selectfont
+                \scalebox{1.5}{\textbf{Bakgrund}}\\
+                Jag är en positiv, ambitiös och driven\\
+                person med ett stort intresse för\\
+                teknik. Alltifrån serverhallar till\\
+                flygplan. Under min gymnasiet fick jag\\
+                ett stort intresse för datorer och mer\\
+                specifikt programmering.
+                Efter\\gymnasiet tog jag ett sabbatsår\\
+                och jobbade på utbildningskoncernen\\
+                AcadeMedia, där jag fick utveckla\\
+                flera program inom diverse områden
+                för att underlätta arbetsflöden. Mina\\
+                tidigare chefer brukar beskriva
+                mig som ansvarstagande och har berömt\\
+                mig för min förmåga att passa in i\\
+                olika miljöer och skapa god stämning\\
+                på jobbet.\\\\
+                \scalebox{1.5}{\textbf{Kontakt}}\\
+                \vspace*{15pt}
+                \begin{tabular}{l l}
+                    \\Telefon: & 070-975 53 52 \\
+                    E-mail: & victor.vieweg@icloud.com \\
+                    Github: & https://github.com/v-olin \\
+                    Hemsida: & www.v-olin.dev \\
+                    % \vspace*{10pt}
+                \end{tabular} \\
+                \scalebox{1.5}{\textbf{Kunskaper}}
+                \begin{itemize}
+                    \item{God kunskap inom .NET och\\programmering i C\#}
+                    \item{Erfarenhet inom andra språk\\som C, Java, JavaScript,\\Haskell och Python}
+                    \item{Väldigt stresstålig och bra\\lagkamrat}
+                    \item{Genuint intresserad av att\\utvecklas och lära mig om\\nya områden}
+                    \vspace*{10pt}
+                \end{itemize}
+                \scalebox{1.5}{\textbf{Intressen}}
+                \begin{itemize}
+                    \item{Flygplan och flygsimulatorer}
+                    \item{Allt gällande datorer!}
+                    \item{Programmering\\\\\\\\\\}
+                    % (Detta CV är skrivet i \LaTeX!)
+                \end{itemize}
+            }            
+        \end{tcolorbox}
+    \end{minipage}
+    \begin{minipage}[t]{12cm}
+        \vspace*{-18.2pt}
+        \begin{tcolorbox}[grow to left by=-10pt,colframe=white,colback=white,sharp corners]
+            {\fontfamily{qag}\selectfont
+                \scalebox{1.5}{\textbf{Utbildning}}\\
+                \\\textbf{Civilingenjörsexamen i Datateknik, Chalmers} \\
+                \emph{2020 - 2025} \\
+                I hösten av 2020 påbörjade jag min utbildning\\
+                för att bli civilingenjör med inriktning på\\
+                datateknik. Jag har alltid varit fascinerad av\\
+                datorer enda sedan jag var liten och under\\
+                mina första två år har jag lärt mig otroligt\\
+                mycket och upptäckt nya områden som jag har\\
+                blivit passionerad om.\\\\
+                \textbf{Teknikprogrammet på NTI Gymnasiet, Stockholm} \\
+                \emph{2016 - 2019} \\
+                I gymnasiet studerade jag det högskoleinriktade\\
+                teknikprogrammet med sikte på att bli civilingenjör\\
+                inom datateknik. Under mina tre år lästa jag\\
+                utökade studier inom engelska, 3D-modellering\\
+                och avancerad matematik.\\\\\\
+                \scalebox{1.5}{\textbf{Arbetserfarenhet}}\\
+                \\\textbf{IT tekniker, AcadeMedia Support}\\
+                \emph{2019 - 2020}\\
+                Efter gymnasiet tog jag ett sabbatsår och jobbade\\
+                som teknisk support på nordens största\\
+                friskolekoncern AcadeMedia. Det var en mycket\\
+                lärande möjlighet och jag fick ta del av hur\\
+                arbetslivet ser ut inom IT och vilka utmaningar\\
+                som man ställs inför dagligen inom IT och\\
+                infrastruktur. Jag fick även bidra till större\\
+                projekt under min tid gällande programmering\\
+                av skräddarsydda  verktyg och felsökning av\\
+                program hos nationella IT-leverantörer.\\\\
+                \\\textbf{Fastighetstekniker, Fabege AB}\\
+                \emph{2019, 2021}\\
+                Under sommrarna 2019 och 2021 arbetade jag som\\
+                fastighetstekniker på Fabege i Arenastaden. Jag\\
+                fick lära mig mycket om hur driftsystem ser ut\\
+                i praktiken och vilka eventuella begränsningar\\
+                och riktmärken som finns. Det var även mycket\\
+                problemlösning inom olika områden från interna\\
+                servrar till fläktrum.
+            }
+        \end{tcolorbox}
+    \end{minipage}
+\end{tcolorbox}
+
+\newpage
+
+\tcbset{colframe=white,colback=titleBack,arc=0mm}
+\begin{tcolorbox}[height from=0cm to 10cm]
+    \begin{minipage}[t]{4.5cm}
+        \cutpic{2cm}{4cm}{pfp.jpg}
+    \end{minipage}
+\end{tcolorbox}
+
+\tcbset{colframe=white,colback=white,arc=0mm}
+\begin{tcolorbox}
+    \begin{minipage}[t]{2cm}
+        \begin{tcolorbox}[colframe=white,colback=white]
+            
+        \end{tcolorbox}
+    \end{minipage}
+    \begin{minipage}[t]{15cm}
+        \begin{tcolorbox}[colframe=white,colback=white]
+            {\fontfamily{qag}\selectfont
+                \scalebox{1.5}{\textbf{Övriga meriter}}\\
+                \\\textbf{Aktiv medlem i Spånga Scoutkår i 10 år}\\
+                Jag har lärt mig mycket under mina år i scouterna,\\
+                bland annat ledarskap, överlevnad i naturen och\\
+                lagarbete under tuffa förhållanden. Jag har deltagit\\
+                i nattliga seglingar til och från Gotland under\\
+                större stormar, skidat 20 mil i fjällen under\\
+                stormvarning samt varit patrulledare och därmed\\
+                hjälpt yngre scouter till rätta. Jag har även\\
+                haft ansvar med att jobba i pass under långa\\
+                seglingar och hajker.\\\\
+                Tävlat och vunnit flertal tävlingar inom\\
+                luftgevärsskytte. Jag vann Stockholms\\
+                distriktsmästerskap 2015 och kom 9nde plats i\\
+                SM samma år.\\\\
+                Jag innehar B-körkort för både manuell och automat.\\
+
+                Referenser finns att lämnas på begäran.
+            }
+        \end{tcolorbox}
+    \end{minipage}
+\end{tcolorbox}
+
+\end{document}
+
+        
