@@ -1,0 +1,207 @@
+\documentclass[11pt,oneside,a4paper,titlepage]{article}
+
+\usepackage[most]{tcolorbox}
+\usepackage{geometry}
+\usepackage{tgbonum}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage{hyperref}
+
+\geometry{
+    a4paper,
+    left    =-0.1cm,
+    right   =-0.1cm,
+    top     =-0.1cm,
+    bottom  =-0.1cm
+}
+
+\newsavebox{\picbox}
+
+\newcommand{\cutpic}[3]{
+  \savebox{\picbox}{\includegraphics[width=#2]{#3}}
+  \tikz\node [draw, rounded corners=#1, line width=1pt,
+                color=white, minimum width=\wd\picbox,
+                minimum height=\ht\picbox, path picture={
+                \node at (path picture bounding box.center) {
+                    \usebox{\picbox}};
+                }
+            ]{};
+}
+
+\definecolor{titleBack}{RGB}{255,121,35}
+\definecolor{sup-lgray}{RGB}{238,238,238}
+
+\title{Victor Olin}
+\date{}
+
+\begin{document}
+
+\tcbset{colframe=white,colback=titleBack,arc=0mm}
+
+\begin{tcolorbox}
+    \begin{minipage}{4.5cm}
+        \cutpic{2cm}{4cm}{pfp.jpg}
+    \end{minipage}
+    \begin{minipage}{15cm}
+        \begin{center}
+            {\fontfamily{qag}\selectfont
+                \Huge{\textcolor{white}{Victor Olin}} \\
+                \vspace*{0.5cm}
+                \Large{\textcolor{white}{CSE student \textbar{ } Programming enthusiast}}
+            }
+        \end{center}
+    \end{minipage}
+\end{tcolorbox}
+
+% \titleformat{\section*}[display] {\fontfamily{qag}\selectfont}
+
+\tcbset{colframe=white,colback=white,arc=0mm,fit to height=24cm}
+\begin{tcolorbox}
+    \begin{minipage}[t]{8cm}
+        \vspace*{-18.2pt}
+        \begin{tcolorbox}[grow to left by=15pt,colframe=sup-lgray,colback=sup-lgray,sharp corners]
+            {\fontfamily{qag}\selectfont
+                \scalebox{1.5}{\textbf{Background}}\\
+                I am a positive, ambitious and driven\\
+                person with a big interest for technology.\\
+                Everything from computers to airplanes.\\
+                During secondary school I discovered\\
+                a big interest for computers and\\
+                more specifically programming.\\
+                After secondary school I went on\\
+                a sabbatical year and worked for\\
+                education group AcadeMedia, where\\
+                I got to develop several programs\\
+                in different areas to simplify\\
+                the workflow of my colleagues.\\
+                My previous bosses describe me as\\
+                responsible and has commended my\\
+                ability to adapt to different\\
+                environments.\\\\
+                \scalebox{1.5}{\textbf{Contacts}}\\
+                \vspace*{15pt}
+                \begin{tabular}{l l}
+                    \\Telephone: & 070-975 53 52 \\
+                    E-mail: & victor.vieweg@icloud.com \\
+                    Github: & \href{https://github.com/v-olin}{https://github.com/v-olin} \\
+                    Website: & \href{https://www.v-olin.dev}{https://www.v-olin.dev} \\
+                    % \vspace*{10pt}
+                \end{tabular} \\
+                \scalebox{1.5}{\textbf{Experience}}
+                \begin{itemize}
+                    \item{Good knowledge in .NET and\\programming in C\#}
+                    \item{Experienced in other languages\\like C, Java, Javascript,\\Haskell and Python}
+                    \item{Perform well under stress and\\a good teamplayer} %Väldigt stresstålig och bra\\lagkamrat}
+                    \item{Genuinely interested to develop\\ and to learn new concepts}%Genuint intresserad av att\\utvecklas och lära mig om\\nya områden}
+                    \vspace*{10pt}
+                \end{itemize}
+                \scalebox{1.5}{\textbf{Interests}}
+                \begin{itemize}
+                    \item{Airplanes and flight simulators}
+                    \item{Everything regarding computers}
+                    \item{Programming\\\\\\\\\\\\}
+                    % (Detta CV är skrivet i \LaTeX!)
+                \end{itemize}
+            }            
+        \end{tcolorbox}
+    \end{minipage}
+    \begin{minipage}[t]{12cm}
+        \vspace*{-18.2pt}
+        \begin{tcolorbox}[grow to left by=-10pt,colframe=white,colback=white,sharp corners]
+            {\fontfamily{qag}\selectfont
+                \scalebox{1.5}{\textbf{Education}}\\
+                \\\textbf{CS Engineering degree, Chalmers} \\
+                \emph{2020 - 2025} \\
+                In the fall of 2020 I started my education to become\\
+                an engineer with a speciality of computer\\
+                science and engineering. I have always\\
+                been fascinated by computers ever since\\
+                I was young and during my first two years\\
+                at Chalmers, I have learned a lot and\\
+                discovered new areas that I have\\
+                become very passionate about.\\\\
+                \textbf{Technology program at NTI Gymnasiet, Stockholm} \\
+                \emph{2016 - 2019} \\
+                In secondary school I studied the technology\\
+                program aimed towards university with a sight\\
+                of becoming an engineer in computer science.\\
+                During my three years I took extended courses\\
+                in English, 3D-modelling and advanced mathematics.\\\\\\
+                \scalebox{1.5}{\textbf{Career}}\\
+                \\\textbf{Technical support, AcadeMedia Support}\\
+                \emph{2019 - 2020}\\
+                After secondary school I took a sabbatical and\\
+                worked for the largest education group in\\
+                Scandinavia, AcadeMedia. It was a learning\\
+                experience and I got to take part in the\\
+                workflow of an IT department and see what\\
+                challenges you are facing on a daily basis.\\
+                I also took part in larger projects during\\
+                my time there regarding development of\\
+                tailored software and diagnostics of\\
+                software from national IT contractors.\\\\
+                \\\textbf{Estate technician, Fabege AB}\\
+                \emph{2019, 2021}\\
+                During the summers of 2019 and 2021 I worked\\
+                as a real estate technician at Fabege in\\
+                Stockholm. I got to learn a lot about\\
+                operating systems of real estate and\\
+                eventual limits and standards there are.\\
+                I encountered a lot of problem solving\\
+                on a daily basis within different areas\\
+                such as internal servers and airflow systems.
+            }
+        \end{tcolorbox}
+    \end{minipage}
+\end{tcolorbox}
+
+\newpage
+
+\tcbset{colframe=white,colback=titleBack,arc=0mm}
+\begin{tcolorbox}[height from=0cm to 10cm]
+    \begin{minipage}[t]{4.5cm}
+        \cutpic{2cm}{4cm}{pfp.jpg}
+    \end{minipage}
+\end{tcolorbox}
+
+\tcbset{colframe=white,colback=white,arc=0mm}
+\begin{tcolorbox}
+    \begin{minipage}[t]{2cm}
+        \begin{tcolorbox}[colframe=white,colback=white]
+            
+        \end{tcolorbox}
+    \end{minipage}
+    \begin{minipage}[t]{15cm}
+        \begin{tcolorbox}[colframe=white,colback=white]
+            {\fontfamily{qag}\selectfont
+                \scalebox{1.5}{\textbf{Other merits}}\\
+                \\\textbf{Active member of Spånga Scoutkår for 10 years}\\
+                I have learned a lot from my years as a scout,\\
+                including leadership skills, survival skills\\
+                and teamwork during tough conditions. I took\\
+                part in nightly sailings to and from Gotland\\
+                during gales, skied 100 miles in the mountains\\
+                during hurricanes and being a group leader for\\
+                younger scouts. I have also had responsibilities\\
+                from working in shifts during long sailings\\
+                and ventures.\\\\
+                When I was younger I competed in air rifle\\
+                shooting. In 2015 I won the district\\
+                championship in Stockholm and placed 9th\\
+                in the national championships.\\\\
+                I have category B driver's license for both\\
+                automatic and manual transmissions.\\
+
+                References are available upon request.\\
+
+                A simple example of my interest in programming\\
+                is this CV. This CV is completely written in \LaTeX\\
+                and the source code can be \href{https://github.com/v-olin/resume}{found here}!
+            }
+        \end{tcolorbox}
+    \end{minipage}
+\end{tcolorbox}
+
+\end{document}
+
+        
